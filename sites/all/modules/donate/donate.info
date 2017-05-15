@@ -1,0 +1,5 @@
+name = Donate Form
+description = Donate to an event
+package = Event Funder
+core = 7.x
+files[] = donate.module

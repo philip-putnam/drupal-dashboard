@@ -1,0 +1,33 @@
+<?php
+
+function donate_menu() {
+  $items['donate'] = array(
+    'title' => 'Donate to Event',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('donate_form'),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+
+function donate_form() {
+  $form['donate_amount'] = array(
+    '#title' => 'Donate',
+    '#type' => 'textfield',
+    '#required' => TRUE,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'DONATE',
+  );
+
+  return $form;
+}
+
+function donate_form_submit($form, &$form_state) {
+
+
+}
