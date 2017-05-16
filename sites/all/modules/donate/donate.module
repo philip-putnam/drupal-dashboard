@@ -1,33 +1,81 @@
 <?php
 
-function donate_menu() {
-  $items['donate'] = array(
-    'title' => 'Donate to Event',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('donate_form'),
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-  );
-  return $items;
-}
+function donate_form_alter(&$form, &$form_state, $form_id) {
+  print '<pre>';
+  var_dump(get_defined_vars());
+  print '</pre>';
+  $webform = 'webform_client_form_';
+  if($form_id == 'webform_client_form_10') {
+    print '<pre>';
+    print 'hello<br>';
+    var_dump($form_state);
+    print 'break<br>';
+    var_dump($form_state['build_info']['args'][0]->field_goal['und'][0]['value']);
+    print 'good-bye';
+    print '</pre>';
+  }
+ }
 
+// function donate_block_info() {
+//   $blocks = array();
+//
+//   $blocks['donate_module'] = array(
+//     'info' => t('Donate Block'),
+//     'cache' => DRUPAL_NO_CACHE,
+//   );
+//
+//   return $blocks;
+// }
+//
+// function donate_block_view($block_name = '') {
+//
+//   if ($block_name == 'donate_module') {
+//     $list = module_list();
+//
+//     $theme_args = array('items' => $list, 'type' => 'ol');
+//     $content = theme('item_list', $theme_args);
+//
+//     $block = array(
+//       'subject' => t('Donate to event:'),
+//       'content' => $content,
+//     );
+//
+//     print '<pre>';
+//     var_dump(get_defined_vars());
+//     print '</pre>';
 
-function donate_form() {
-  $form['donate_amount'] = array(
-    '#title' => 'Donate',
-    '#type' => 'textfield',
-    '#required' => TRUE,
-  );
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => 'DONATE',
-  );
-
-  return $form;
-}
-
-function donate_form_submit($form, &$form_state) {
-
-
-}
+//     return $block;
+//   }
+// }
+//
+// function donate_menu() {
+//   $items['donate'] = array(
+//     'title' => 'Donate to Event',
+//     'page callback' => 'drupal_get_form',
+//     'page arguments' => array('donate_form'),
+//     'access callback' => TRUE,
+//     'type' => MENU_CALLBACK,
+//   );
+//   return $items;
+// }
+//
+//
+// function donate_form() {
+//   $form['donate_amount'] = array(
+//     '#title' => 'Donate',
+//     '#type' => 'textfield',
+//     '#required' => TRUE,
+//   );
+//
+//   $form['submit'] = array(
+//     '#type' => 'submit',
+//     '#value' => 'DONATE',
+//   );
+//
+//   return $form;
+// }
+//
+// function donate_form_submit($form, &$form_state) {
+//
+//
+// }
