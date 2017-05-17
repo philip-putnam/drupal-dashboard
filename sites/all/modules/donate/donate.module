@@ -1,18 +1,18 @@
 <?php
 
 function donate_form_alter(&$form, &$form_state, $form_id) {
-  print '<pre>';
-  var_dump(get_defined_vars());
-  print '</pre>';
+  // print '<pre>';
+  // var_dump($_GET(localhost:8888/node/11));
+  // print '</pre>';
   $webform = 'webform_client_form_';
   if($form_id == 'webform_client_form_10') {
-    print '<pre>';
-    print 'hello<br>';
-    var_dump($form_state);
-    print 'break<br>';
-    var_dump($form_state['build_info']['args'][0]->field_goal['und'][0]['value']);
-    print 'good-bye';
-    print '</pre>';
+    // print '<pre>';
+    // print 'hello<br>';
+    // var_dump($form_state);
+    // print 'break<br>';
+    // var_dump($form_state['build_info']['args'][0]->field_goal['und'][0]['value']);
+    // print 'good-bye';
+    // print '</pre>';
   }
  }
 
